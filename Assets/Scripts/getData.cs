@@ -15,7 +15,7 @@ public class getData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        getQuestions();
+        //getQuestions();
     }
 
     // Update is called once per frame
@@ -29,11 +29,11 @@ public class getData : MonoBehaviour
     }
     public Question getQuestion()
     {
-        int idPop = Random.Range(0, questions.Count);
-        Question ans = questions[idPop];
-        questions.RemoveAt(idPop);
+        //int idPop = Random.Range(0, questions.Count);
+        //Question ans = questions[idPop];
+        //questions.RemoveAt(idPop);
         List<Answer> answers = new List<Answer> { new Answer(1, "Tupu", false), new Answer(2, "Sapo", true),new Answer(2, "MMVRG", false),new Answer(4, ":v", false) };
-        ans = new Question(1,"Quien pregunta >:v?","imagen1");
+        Question ans = new Question(1,"Quien pregunta Esto saludos?","1");
         ans.options = answers;
         return ans;
     }

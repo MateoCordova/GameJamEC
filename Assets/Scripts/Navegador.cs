@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Navegador : MonoBehaviour
 {
-    private List<(double,double)> PosicionesJugador;
-    private List<(double,double)> PosicionesComputador;
+    private List<(double,double)> PosicionesJugador = new List<(double, double)>();
+    private List<(double,double)> PosicionesComputador = new List<(double, double)>();
     public int puntajeJugador;
     public int puntajePC;
 

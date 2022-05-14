@@ -9,15 +9,23 @@ public class Controlador : MonoBehaviour
 {
     public TMP_Text timer;
     public GameObject pregunta;
+    public RawImage fondo;
     public List<GameObject> Opciones;
     public float targetTime = 5.0f;
-    public Question question;
+    private Question question;
     public GameObject Navegador;
+    public List<Texture> texturas;
 
     // Start is called before the first frame update
     void Start()
     {
-        CierraOpciones();
+        question = GameObject.Find("Database").GetComponent<getData>().getQuestion();
+        pregunta.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = question.text;
+        for(int i = 0; i < 4 ; i++){
+            Opciones[i].transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = question.options[i].text;
+        }
+        Debug.Log(question.background);
+        fondo.texture = texturas[int.Parse(question.background)];
     }
 
     // Update is called once per frame
@@ -29,6 +37,7 @@ public class Controlador : MonoBehaviour
         if (targetTime <= 0)
         {
             timer.text = "0";
+            CierraOpciones();
         }
     }
 
@@ -37,11 +46,11 @@ public class Controlador : MonoBehaviour
             opcion.transform.GetChild(2).gameObject.GetComponent<Button>().interactable = false;
         }
     }
-    void RecibirRespuesta(int id){
+    public void RecibirRespuesta(int id){
         if(question.options[id].isCorrect){
-            //Suma un punto a jugador
+            GameObject.Find("Control de juego").GetComponent<Navegador>().puntajeJugador ++;
         } else {
-            //Sum un punto a enemigo
+            GameObject.Find("Control de juego").GetComponent<Navegador>().puntajePC ++;
         }
     }
 }
