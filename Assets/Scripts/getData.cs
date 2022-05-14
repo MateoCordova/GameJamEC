@@ -24,6 +24,9 @@ public class getData : MonoBehaviour
     {
 
     }
+    public List<Question> getQuestionsFull(){
+        return questions;
+    }
     public Question getQuestion(int index)
     {
         Question ans = questions[index];
