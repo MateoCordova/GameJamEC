@@ -3,4 +3,5 @@ public class Question
 {
     public string text { get; set; }
     public List<Answer> options { get; set; }
+    public string background { get; set; }
 }
