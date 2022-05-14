@@ -1,5 +1,8 @@
-public class Answer
-{
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+public class Answer : MonoBehaviour
+{    
     public Answer(int id, string text, bool isCorrect)
     {
         this.id = id;
