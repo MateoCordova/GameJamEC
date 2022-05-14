@@ -16,7 +16,6 @@ public class getData : MonoBehaviour
     void Start()
     {
         getQuestions();
-
     }
 
     // Update is called once per frame
@@ -24,13 +23,18 @@ public class getData : MonoBehaviour
     {
 
     }
-    public List<Question> getQuestionsFull(){
+    public List<Question> getQuestionsFull()
+    {
         return questions;
     }
-    public Question getQuestion(int index)
+    public Question getQuestion()
     {
-        Question ans = questions[index];
-        questions.RemoveAt(index);
+        int idPop = Random.Range(0, questions.Count);
+        Question ans = questions[idPop];
+        questions.RemoveAt(idPop);
+        List<Answer> answers = new List<Answer> { new Answer(1, "Tupu", false), new Answer(2, "Sapo", true),new Answer(2, "MMVRG", false),new Answer(4, ":v", false) };
+        ans = new Question(1,"Quien pregunta >:v?","imagen1");
+        ans.options = answers;
         return ans;
     }
     public void getQuestions()
