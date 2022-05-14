@@ -1,0 +1,31 @@
+CREATE DATABASE NetLegends;
+GO
+USE NetLegends;
+GO
+CREATE TABLE Questions(
+Id_Question INT IDENTITY PRIMARY KEY,
+Text_Question VARCHAR(500),
+Background VARCHAR(500)
+)
+
+CREATE TABLE Answers(
+Id_Answer INT IDENTITY PRIMARY KEY,
+Text_Answer VARCHAR(500),
+Is_Correct bit,
+Id_Question INT FOREIGN KEY REFERENCES Questions(Id_Question) ON DELETE  CASCADE,
+)
+
+INSERT INTO Questions VALUES('TEST','TESTBACKGROUND')
+INSERT INTO Questions VALUES('TEST2','TESTBACKGROUND2')
+
+
+INSERT INTO Answers VALUES('Test Ans 1',0,1)
+INSERT INTO Answers VALUES('Test Ans 2',0,1)
+INSERT INTO Answers VALUES('Test Ans 3',0,1)
+INSERT INTO Answers VALUES('Test Ans 4',1,1)
+
+
+INSERT INTO Answers VALUES('Test Ans 1',0,2)
+INSERT INTO Answers VALUES('Test Ans 2',1,2)
+INSERT INTO Answers VALUES('Test Ans 3',0,2)
+INSERT INTO Answers VALUES('Test Ans 4',0,2)
