@@ -9,12 +9,15 @@ public class Controlador : MonoBehaviour
 {
     public TMP_Text timer;
     public GameObject pregunta;
+    public List<GameObject> Opciones;
     public float targetTime = 5.0f;
+    public Question question;
+    public GameObject Navegador;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        CierraOpciones();
     }
 
     // Update is called once per frame
@@ -26,6 +29,19 @@ public class Controlador : MonoBehaviour
         if (targetTime <= 0)
         {
             timer.text = "0";
+        }
+    }
+
+    void CierraOpciones(){
+        foreach(GameObject opcion in Opciones){
+            opcion.transform.GetChild(2).gameObject.GetComponent<Button>().interactable = false;
+        }
+    }
+    void RecibirRespuesta(int id){
+        if(question.options[id].isCorrect){
+            //Suma un punto a jugador
+        } else {
+            //Sum un punto a enemigo
         }
     }
 }
