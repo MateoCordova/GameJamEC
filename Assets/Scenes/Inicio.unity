@@ -1101,15 +1101,9 @@ MonoBehaviour:
   soundBtn: {fileID: 1110253029}
   soundOn: {fileID: 174030603, guid: a3c4d1bc2ae9a5f40a5909ba1f8734a1, type: 3}
   soundOff: {fileID: 1394667504, guid: a3c4d1bc2ae9a5f40a5909ba1f8734a1, type: 3}
-<<<<<<< HEAD
   Jugador: {fileID: 0}
   PC: {fileID: 0}
   SiguentePregunta: {fileID: 0}
-=======
-  Jugador: {fileID: 4017540760652957125, guid: 13b183b62f4b6481cbcf1a5b5451417a, type: 3}
-  PC: {fileID: 6500633917361631806, guid: cbeb8e9c6116f4ccbb1879076c21051e, type: 3}
-  SiguentePregunta: {fileID: 562463579}
->>>>>>> 6b4ccc4a1d6ee21746336fcc3034d69c4fce3c03
 --- !u!4 &1581017010
 Transform:
   m_ObjectHideFlags: 0
