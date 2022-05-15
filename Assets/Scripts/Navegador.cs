@@ -22,14 +22,14 @@ public class Navegador : MonoBehaviour
     void Start(){
         isPlaying = true;
 
-        PosicionesJugador.Add((-351,-34));
-        PosicionesComputador.Add((-351,-54));
+        PosicionesJugador.Add((-786,-34));
+        PosicionesComputador.Add((-786,-54));
 
-        PosicionesJugador.Add((-298,-34));
-        PosicionesComputador.Add((-298,-54));
+        PosicionesJugador.Add((-740,-34));
+        PosicionesComputador.Add((-740,-54));
 
-        PosicionesJugador.Add((-232,-34));
-        PosicionesComputador.Add((-232,-54));
+        PosicionesJugador.Add((-700,-34));
+        PosicionesComputador.Add((-700,-54));
 
         PosicionesJugador.Add((-167,-34));
         PosicionesComputador.Add((-167,-54));
@@ -84,17 +84,19 @@ public class Navegador : MonoBehaviour
     }
 
     void Update() {
-        if(PosicionesJugador[puntajeJugador].Item1 < Jugador.transform.position.x){
+        Debug.Log(string.Format("Jugador {0:0}", Jugador.GetComponent<RectTransform>().position.x));
+        Debug.Log(string.Format("Posision deseada {0:0}", PosicionesJugador[puntajeJugador].Item1));
+        if(Jugador.transform.position.x < PosicionesJugador[puntajeJugador].Item1){
             //Jugador Move Animation
-            Jugador.transform.Translate(1, 0f, 0f);
+            MoveRight(Jugador.GetComponent<RectTransform>(),(float) PosicionesJugador[puntajeJugador].Item1);
             //Boton Disable
         }else {
             //Jugador Idle Animation
             //Boton enable
         }
-        if(PosicionesComputador[puntajePC].Item1 < PC.transform.position.x){
+        if(PosicionesComputador[puntajePC].Item1 > PC.transform.position.x){
             //PC Move Animation
-            PC.transform.Translate(1, 0f, 0f);
+            MoveRight(PC.GetComponent<RectTransform>(), (float) PosicionesComputador[puntajePC].Item1);
             //PC Move Animation
         } else {
             //PC Idle Animation
@@ -107,4 +109,19 @@ public class Navegador : MonoBehaviour
             SceneManager.LoadScene("Ganaste");
         }
     }
+     public void MoveRight(RectTransform panel, float targetPosX)
+     {
+        StartCoroutine(Move(panel, new Vector2(targetPosX, 0)));
+     }
+ 
+     IEnumerator Move(RectTransform rt, Vector2 targetPos)
+     {
+         float step = 0;
+         while (step < 1)
+         {
+             rt.offsetMin = Vector2.Lerp(rt.offsetMin, targetPos, step += Time.deltaTime);
+             rt.offsetMax = Vector2.Lerp(rt.offsetMax, targetPos, step += Time.deltaTime);
+             yield return new WaitForEndOfFrame();
+         }
+     }
 }
