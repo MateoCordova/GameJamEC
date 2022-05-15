@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -330, y: 0}
-  m_SizeDelta: {x: 275.3065, y: 176.9638}
+  m_AnchoredPosition: {x: -467.6911, y: 39.368}
+  m_SizeDelta: {x: 685.5698, y: 480.39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &212238757
 MonoBehaviour:
@@ -424,7 +424,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 410.8, y: -95.673}
+  m_AnchoredPosition: {x: 450, y: -95.672}
   m_SizeDelta: {x: 263.1495, y: 210.3107}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1331246062
@@ -447,15 +447,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Juan
+  m_text: 'Andres
 
-    Paul
+    Natasha
 
-    Mateo
+    Veronica
 
-    Sergio
-
-'
+    Salo'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b535d6bb980ecfe469b9da4a1902cf26, type: 2}
   m_sharedMaterial: {fileID: 4572547607095273628, guid: b535d6bb980ecfe469b9da4a1902cf26, type: 2}
@@ -482,8 +480,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -518,7 +516,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: -159.39069, z: 0, w: 154.07773}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -568,8 +566,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 532, y: -263}
-  m_SizeDelta: {x: 55, y: 55}
+  m_AnchoredPosition: {x: 850, y: -431}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1532141682
 MonoBehaviour:
@@ -767,8 +765,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 270, y: 55.999}
-  m_SizeDelta: {x: 507.8555, y: 64.9652}
+  m_AnchoredPosition: {x: 336.41284, y: 231.2353}
+  m_SizeDelta: {x: 879.7673, y: 96.6593}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1578206008
 MonoBehaviour:
@@ -817,8 +815,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 69
+  m_fontSizeBase: 69
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -902,8 +900,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.012512, y: 0}
-  m_SizeDelta: {x: 1175.5, y: 628.5}
+  m_AnchoredPosition: {x: 0.010071, y: 0.0024948}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1761112186
 MonoBehaviour:
@@ -974,6 +972,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puntajeJugador: 0
   puntajePC: 0
+  audioSource: {fileID: 0}
+  soundBtn: {fileID: 0}
+  soundOn: {fileID: 0}
+  soundOff: {fileID: 0}
 --- !u!4 &1923330177
 Transform:
   m_ObjectHideFlags: 0
@@ -1024,7 +1026,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 147.64703, y: -95.67273}
+  m_AnchoredPosition: {x: 94, y: 64}
   m_SizeDelta: {x: 263.1495, y: 210.3107}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2045654790
@@ -1082,8 +1084,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1118,7 +1120,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: -156.73422}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
