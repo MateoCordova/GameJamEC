@@ -100,24 +100,21 @@ public class Navegador : MonoBehaviour
             if (Jugador.GetComponent<RectTransform>().anchoredPosition3D.x < PosicionesJugador[puntajeJugador].Item1)
             {
                 //Jugador Move Animation
-                //MoveRight(Jugador.GetComponent<RectTransform>(),(float) PosicionesJugador[puntajeJugador].Item1);
                 Jugador.transform.Translate(0.5f, 0f, 0f);
                 //Boton Disable
             }
             else
             {
                 //Jugador Idle Animation
-                //Boton enable
+                //Boton Disable
+                
             }
             if (PosicionesComputador[puntajePC].Item1 > PC.GetComponent<RectTransform>().anchoredPosition3D.x)
             {
-                //PC Move Animation
                 PC.transform.Translate(0.5f, 0f, 0f);
-                //PC Move Animation
             }
             else
             {
-                //PC Idle Animation
                 //Boton enable
             }
             if (puntajePC == 10)

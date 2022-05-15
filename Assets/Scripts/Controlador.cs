@@ -15,7 +15,7 @@ public class Controlador : MonoBehaviour
     private Question question;
     public GameObject Navegador;
     public List<Texture> texturas;
-
+    private bool tiempo = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,10 +34,11 @@ public class Controlador : MonoBehaviour
         targetTime -= Time.deltaTime;
         timer.text = String.Format("{0:0}", targetTime);
         
-        if (targetTime <= 0)
+        if (targetTime <= 0 & tiempo)
         {
             timer.text = "0";
             CierraOpciones();
+            //Sonido Derrota
             GameObject.Find("Control de juego").GetComponent<Navegador>().puntajePC ++;
             StartCoroutine(VolverATablero(5));
         }
@@ -49,6 +50,7 @@ public class Controlador : MonoBehaviour
         }
     }
     public void RecibirRespuesta(int id){
+        tiempo = false;
         if(question.options[id].isCorrect){
             GameObject.Find("Control de juego").GetComponent<Navegador>().puntajeJugador ++;
             //Sonido Acierto
