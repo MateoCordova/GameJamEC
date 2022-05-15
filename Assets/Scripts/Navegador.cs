@@ -18,7 +18,7 @@ public class Navegador : MonoBehaviour
     private bool isPlaying;
 
     private Animator anim;
-    
+
     //PLAYERS
     public GameObject Jugador;
     public GameObject PC;
@@ -26,8 +26,14 @@ public class Navegador : MonoBehaviour
     void Start()
     {
         isPlaying = true;
+        try
+        {
+            anim = Jugador.GetComponent<Animator>();
+        }
+        catch
+        {
 
-        anim = Jugador.GetComponent<Animator>();
+        }
 
         PosicionesJugador.Add((-780, -34));
         PosicionesComputador.Add((-780, -54));
@@ -106,37 +112,45 @@ public class Navegador : MonoBehaviour
 
     void Update()
     {
-        if (SceneManager.sceneCount == 1)
+        try
         {
-            if (Jugador.GetComponent<RectTransform>().anchoredPosition3D.x < PosicionesJugador[puntajeJugador].Item1)
+            if (SceneManager.sceneCount == 1)
             {
-                Jugador.transform.Translate(0.5f, 0f, 0f);
-                anim.SetBool("isWalking", true);
-                //Boton Disable
+                if (Jugador.GetComponent<RectTransform>().anchoredPosition3D.x < PosicionesJugador[puntajeJugador].Item1)
+                {
+                    Jugador.transform.Translate(0.5f, 0f, 0f);
+                    anim.SetBool("isWalking", true);
+                    //Boton Disable
+                }
+                else
+                {
+                    anim.SetBool("isWalking", false);
+                    //Boton Disable
+
+                }
+                if (PosicionesComputador[puntajePC].Item1 > PC.GetComponent<RectTransform>().anchoredPosition3D.x)
+                {
+                    PC.transform.Translate(0.5f, 0f, 0f);
+                }
+                else
+                {
+                    //Boton enable
+                }
+                if (puntajePC == 10)
+                {
+                    StartCoroutine(Perdiste(5));
+                }
+                if (puntajeJugador == 10)
+                {
+                    StartCoroutine(Ganaste(5));
+                }
             }
-            else
-            {
-                anim.SetBool("isWalking", false);
-                //Boton Disable
-                
-            }
-            if (PosicionesComputador[puntajePC].Item1 > PC.GetComponent<RectTransform>().anchoredPosition3D.x)
-            {
-                PC.transform.Translate(0.5f, 0f, 0f);
-            }
-            else
-            {
-                //Boton enable
-            }
-            if (puntajePC == 10)
-            {
-                StartCoroutine(Perdiste(5));
-            }
-            if (puntajeJugador == 10)
-            {
-                StartCoroutine(Ganaste(5));
-            }
-        } 
+        }
+        catch
+        {
+
+        }
+
 
     }
     public void MoveRight(RectTransform panel, float targetPosX)
