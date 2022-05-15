@@ -10,18 +10,24 @@ public class Navegador : MonoBehaviour
     private List<(double, double)> PosicionesComputador = new List<(double, double)>();
     public int puntajeJugador;
     public int puntajePC;
+    //AUDIO
     public AudioSource audioSource;
     public Button soundBtn;
     public Sprite soundOn;
     public Sprite soundOff;
     private bool isPlaying;
 
+    private Animator anim;
+    
+    //PLAYERS
     public GameObject Jugador;
     public GameObject PC;
     public Button SiguentePregunta;
     void Start()
     {
         isPlaying = true;
+
+        anim = Jugador.GetComponent<Animator>();
 
         PosicionesJugador.Add((-780, -34));
         PosicionesComputador.Add((-780, -54));
@@ -59,6 +65,7 @@ public class Navegador : MonoBehaviour
     public void Jugar()
     {
         SceneManager.LoadScene("Tablero");
+        audioSource.Stop();
     }
     public void Historia()
     {
@@ -103,13 +110,13 @@ public class Navegador : MonoBehaviour
         {
             if (Jugador.GetComponent<RectTransform>().anchoredPosition3D.x < PosicionesJugador[puntajeJugador].Item1)
             {
-                //Jugador Move Animation
                 Jugador.transform.Translate(0.5f, 0f, 0f);
+                anim.SetBool("isWalking", true);
                 //Boton Disable
             }
             else
             {
-                //Jugador Idle Animation
+                anim.SetBool("isWalking", false);
                 //Boton Disable
                 
             }
