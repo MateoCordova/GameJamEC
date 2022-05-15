@@ -1750,7 +1750,7 @@ MonoBehaviour:
   clipCorrecto: {fileID: 8300000, guid: 6c2f1976fe1544f74b94fa5c78bd4b64, type: 3}
   clipIncorrecto: {fileID: 8300000, guid: cf416f4072b2d4898b8427352e720eed, type: 3}
   audioSource: {fileID: 112416903}
-  volume: 0.3
+  volume: 1
 --- !u!4 &1310564118
 Transform:
   m_ObjectHideFlags: 0
