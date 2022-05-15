@@ -651,9 +651,9 @@ MonoBehaviour:
   soundBtn: {fileID: 0}
   soundOn: {fileID: 0}
   soundOff: {fileID: 0}
-  Jugador: {fileID: 0}
-  PC: {fileID: 0}
-  SiguentePregunta: {fileID: 0}
+  Jugador: {fileID: 1338093646}
+  PC: {fileID: 1592552732}
+  SiguentePregunta: {fileID: 529602879}
 --- !u!4 &1104870852
 Transform:
   m_ObjectHideFlags: 0
