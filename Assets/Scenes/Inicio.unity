@@ -844,7 +844,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1581017009}
         m_TargetAssemblyTypeName: Navegador, Assembly-CSharp
-        m_MethodName: Jugar
+        m_MethodName: Historia
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1101,6 +1101,9 @@ MonoBehaviour:
   soundBtn: {fileID: 1110253029}
   soundOn: {fileID: 174030603, guid: a3c4d1bc2ae9a5f40a5909ba1f8734a1, type: 3}
   soundOff: {fileID: 1394667504, guid: a3c4d1bc2ae9a5f40a5909ba1f8734a1, type: 3}
+  Jugador: {fileID: 0}
+  PC: {fileID: 0}
+  SiguentePregunta: {fileID: 0}
 --- !u!4 &1581017010
 Transform:
   m_ObjectHideFlags: 0

@@ -60,6 +60,10 @@ public class Navegador : MonoBehaviour
     {
         SceneManager.LoadScene("Tablero");
     }
+    public void Historia()
+    {
+        SceneManager.LoadScene("Historia");
+    }
     public void Pregunta()
     {
         SceneManager.LoadScene("Principal", LoadSceneMode.Additive);
@@ -125,9 +129,7 @@ public class Navegador : MonoBehaviour
             {
                 StartCoroutine(Ganaste(5));
             }
-        } else {
-            Debug.Log("Inactivo");
-        }
+        } 
 
     }
     public void MoveRight(RectTransform panel, float targetPosX)
