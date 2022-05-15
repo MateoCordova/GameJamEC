@@ -16,7 +16,14 @@ public class Controlador : MonoBehaviour
     public GameObject Navegador;
     public List<Texture> texturas;
     private bool tiempo;
-    // Start is called before the first frame update
+    
+    //AUDIO
+    public AudioClip clipCorrecto;
+    public AudioClip clipIncorrecto;
+    public AudioSource audioSource;
+    public float volume = 0.5f;
+
+
     void Start()
     {
         tiempo = true;
@@ -40,9 +47,9 @@ public class Controlador : MonoBehaviour
         {
             timer.text = "0";
             CierraOpciones();
-            //Sonido Derrota
             GameObject.Find("Control de juego").GetComponent<Navegador>().puntajePC ++;
-            StartCoroutine(VolverATablero(5));
+            audioSource.PlayOneShot(clipIncorrecto, volume);
+            StartCoroutine(VolverATablero(3));
         }
     }
 
@@ -55,13 +62,13 @@ public class Controlador : MonoBehaviour
         tiempo = false;
         if(question.options[id].isCorrect){
             GameObject.Find("Control de juego").GetComponent<Navegador>().puntajeJugador ++;
-            //Sonido Acierto
-            StartCoroutine(VolverATablero(5));
+            audioSource.PlayOneShot(clipCorrecto, volume);
+            StartCoroutine(VolverATablero(3));
             
         } else {
             GameObject.Find("Control de juego").GetComponent<Navegador>().puntajePC ++;
-            //Sonido Derrota
-            StartCoroutine(VolverATablero(5));
+            audioSource.PlayOneShot(clipIncorrecto, volume);
+            StartCoroutine(VolverATablero(3));
         }
     }
 

@@ -796,7 +796,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 33, y: -2}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &927732016
 MonoBehaviour:
@@ -1101,6 +1101,9 @@ MonoBehaviour:
   soundBtn: {fileID: 1110253029}
   soundOn: {fileID: 174030603, guid: a3c4d1bc2ae9a5f40a5909ba1f8734a1, type: 3}
   soundOff: {fileID: 1394667504, guid: a3c4d1bc2ae9a5f40a5909ba1f8734a1, type: 3}
+  Jugador: {fileID: 4017540760652957125, guid: 13b183b62f4b6481cbcf1a5b5451417a, type: 3}
+  PC: {fileID: 6500633917361631806, guid: cbeb8e9c6116f4ccbb1879076c21051e, type: 3}
+  SiguentePregunta: {fileID: 562463579}
 --- !u!4 &1581017010
 Transform:
   m_ObjectHideFlags: 0
