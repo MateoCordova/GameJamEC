@@ -38,6 +38,8 @@ public class Controlador : MonoBehaviour
         {
             timer.text = "0";
             CierraOpciones();
+            GameObject.Find("Control de juego").GetComponent<Navegador>().puntajePC ++;
+            StartCoroutine(VolverATablero(5));
         }
     }
 
@@ -49,8 +51,19 @@ public class Controlador : MonoBehaviour
     public void RecibirRespuesta(int id){
         if(question.options[id].isCorrect){
             GameObject.Find("Control de juego").GetComponent<Navegador>().puntajeJugador ++;
+            //Sonido Acierto
+            StartCoroutine(VolverATablero(5));
+            
         } else {
             GameObject.Find("Control de juego").GetComponent<Navegador>().puntajePC ++;
+            //Sonido Derrota
+            StartCoroutine(VolverATablero(5));
         }
+    }
+
+    IEnumerator VolverATablero(float time)
+    {
+        yield return new WaitForSeconds(time);
+        GameObject.Find("Control de juego").GetComponent<Navegador>().Volveraltablero();
     }
 }

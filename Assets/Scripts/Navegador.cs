@@ -16,6 +16,9 @@ public class Navegador : MonoBehaviour
     public Sprite soundOff;
     private bool isPlaying;
 
+    public GameObject Jugador;
+    public GameObject PC;
+    public Button SiguentePregunta;
     void Start(){
         isPlaying = true;
 
@@ -57,7 +60,11 @@ public class Navegador : MonoBehaviour
     }
     public void Pregunta(){
         SceneManager.LoadScene("Principal", LoadSceneMode.Additive);
-    }                  
+    }    
+
+    public void Volveraltablero(){
+        SceneManager.UnloadSceneAsync("Principal");
+    }                
     public void Regresar(){
         SceneManager.LoadScene("Inicio");
     }
@@ -73,6 +80,31 @@ public class Navegador : MonoBehaviour
             soundBtn.image.sprite = soundOn;
             audioSource.Play();
             isPlaying = true;
+        }
+    }
+
+    void Update() {
+        if(PosicionesJugador[puntajeJugador].Item1 < Jugador.transform.position.x){
+            //Jugador Move Animation
+            Jugador.transform.Translate(1, 0f, 0f);
+            //Boton Disable
+        }else {
+            //Jugador Idle Animation
+            //Boton enable
+        }
+        if(PosicionesComputador[puntajePC].Item1 < PC.transform.position.x){
+            //PC Move Animation
+            PC.transform.Translate(1, 0f, 0f);
+            //PC Move Animation
+        } else {
+            //PC Idle Animation
+            //Boton enable
+        }
+        if(puntajePC == 9 ){
+            SceneManager.LoadScene("Perdiste");
+        }
+        if(puntajeJugador == 9){
+            SceneManager.LoadScene("Ganaste");
         }
     }
 }
