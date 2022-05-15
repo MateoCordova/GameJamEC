@@ -651,6 +651,9 @@ MonoBehaviour:
   soundBtn: {fileID: 0}
   soundOn: {fileID: 0}
   soundOff: {fileID: 0}
+  Jugador: {fileID: 0}
+  PC: {fileID: 0}
+  SiguentePregunta: {fileID: 0}
 --- !u!4 &1104870852
 Transform:
   m_ObjectHideFlags: 0
@@ -921,7 +924,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -786, y: 151.85974}
-  m_SizeDelta: {x: 210.1385, y: 263.7195}
+  m_SizeDelta: {x: 329.2073, y: 288.465}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1592552734
 MonoBehaviour:
@@ -943,7 +946,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b98aa8838f3c54fd19c4e73c159d21a6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 97789c9a2ec5643ad88de3fd46e05b4c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
