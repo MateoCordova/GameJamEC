@@ -52,7 +52,7 @@ public class Controlador : MonoBehaviour
         {
             timer.text = "0";
             CierraOpciones();
-            GameObject.Find("Control de juego").GetComponent<Navegador>().puntajePC = puntuaPC + 1;;
+            GameObject.Find("Control de juego").GetComponent<Navegador>().puntajePC = puntuaPC + 2;
             audioSource.PlayOneShot(clipIncorrecto, volume);
             StartCoroutine(VolverATablero(3));
         }
@@ -67,12 +67,12 @@ public class Controlador : MonoBehaviour
         tiempo = false;
         CierraOpciones();
         if(question.options[id].isCorrect){
-            GameObject.Find("Control de juego").GetComponent<Navegador>().puntajeJugador ++;
+            GameObject.Find("Control de juego").GetComponent<Navegador>().puntajeJugador += 2;
             audioSource.PlayOneShot(clipCorrecto, volume);
             StartCoroutine(VolverATablero(3));
             
         } else {
-            GameObject.Find("Control de juego").GetComponent<Navegador>().puntajePC ++;
+            GameObject.Find("Control de juego").GetComponent<Navegador>().puntajePC += 2;
             audioSource.PlayOneShot(clipIncorrecto, volume);
             StartCoroutine(VolverATablero(3));
         }

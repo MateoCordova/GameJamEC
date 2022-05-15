@@ -8,6 +8,7 @@ public class Question
         this.id = id;
         this.text = text;
         this.background = background;
+        this.options = new List<Answer>();
     }
     public int id { get; set; }
     public string text { get; set; }
