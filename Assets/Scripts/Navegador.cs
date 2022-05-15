@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Navegador : MonoBehaviour
@@ -9,8 +10,15 @@ public class Navegador : MonoBehaviour
     private List<(double,double)> PosicionesComputador = new List<(double, double)>();
     public int puntajeJugador;
     public int puntajePC;
+    public AudioSource audioSource;
+    public Button soundBtn;
+    public Sprite soundOn;
+    public Sprite soundOff;
+    private bool isPlaying;
 
     void Start(){
+        isPlaying = true;
+
         PosicionesJugador.Add((-351,-34));
         PosicionesComputador.Add((-351,-54));
 
@@ -50,4 +58,21 @@ public class Navegador : MonoBehaviour
     public void Pregunta(){
         SceneManager.LoadScene("Principal", LoadSceneMode.Additive);
     }                  
+    public void Regresar(){
+        SceneManager.LoadScene("Inicio");
+    }
+    public void Info(){
+        SceneManager.LoadScene("Info");
+    }
+    public void PlayStopAudio(){
+        if (isPlaying){
+            soundBtn.image.sprite = soundOff;
+            isPlaying = false;
+            audioSource.Pause();
+        } else {
+            soundBtn.image.sprite = soundOn;
+            audioSource.Play();
+            isPlaying = true;
+        }
+    }
 }
