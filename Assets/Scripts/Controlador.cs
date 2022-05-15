@@ -15,10 +15,12 @@ public class Controlador : MonoBehaviour
     private Question question;
     public GameObject Navegador;
     public List<Texture> texturas;
-    private bool tiempo = true;
+    private bool tiempo;
     // Start is called before the first frame update
     void Start()
     {
+        tiempo = true;
+
         question = GameObject.Find("Database").GetComponent<getData>().getQuestion();
         pregunta.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = question.text;
         for(int i = 0; i < 4 ; i++){
@@ -34,7 +36,7 @@ public class Controlador : MonoBehaviour
         targetTime -= Time.deltaTime;
         timer.text = String.Format("{0:0}", targetTime);
         
-        if (targetTime <= 0 & tiempo)
+        if (targetTime <= 0 && tiempo)
         {
             timer.text = "0";
             CierraOpciones();
