@@ -6,8 +6,8 @@ using UnityEngine;
 public class getData : MonoBehaviour
 {
     private static string connectionString =
-             "Server=127.0.0.1;" +
-             "Database=NetLegends;" +
+             "Server=tcp:cerditocapitalista.database.windows.net,1433;" +
+             "Database=GameJamEc;" +
              "User ID=sa;" +
              "Password=sa123;" +
              "Integrated Security=False";
